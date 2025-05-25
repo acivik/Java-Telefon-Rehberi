@@ -13,51 +13,51 @@ public class RehberDemo {
 		
 		while(true) {
 			
-			menuGoruntule();
+		menuGoruntule();
+		
+		tercih = keyboard.nextInt();
+		
+    
+		if(tercih == 1) {
+			System.out.print("\u001B[32m"+"Kişinin Adı: "+ "\u001B[0m");
+			keyboard.nextLine();
+			String ad = keyboard.nextLine();
 			
-			tercih = keyboard.nextInt();
+			System.out.print("\u001B[32m"+"Kişinin Soyadı: "+ "\u001B[0m");
+			String soyAd = keyboard.nextLine();
 			
-            
-			if(tercih == 1) {
-                System.out.print("\u001B[32m"+"Kişinin Adı: "+ "\u001B[0m");
-                keyboard.nextLine();
-                String ad = keyboard.nextLine();
-                
-                System.out.print("\u001B[32m"+"Kişinin Soyadı: "+ "\u001B[0m");
-                String soyAd = keyboard.nextLine();
-                
-                System.out.print("\u001B[32m"+"Kişinin Telefon Numarası: "+ "\u001B[0m");
-                String telNo = keyboard.nextLine();
-                
-				rehber.kayitEkle(ad, soyAd, telNo);
+			System.out.print("\u001B[32m"+"Kişinin Telefon Numarası: "+ "\u001B[0m");
+			String telNo = keyboard.nextLine();
+			
+			rehber.kayitEkle(ad, soyAd, telNo);
+		}
+		else if(tercih == 2) {
+			if(rehber.telRehber[0] != null){
+			    System.out.print("\u001B[32m"+"Kişinin Adı: "+ "\u001B[0m");
+			    keyboard.nextLine();
+			    String ad = keyboard.nextLine();
+			    
+			    System.out.print("\u001B[32m"+"Kişinin Soyadı: "+ "\u001B[0m");
+			    String soyAd = keyboard.nextLine();
+			    
+			    rehber.kayitBul(ad, soyAd);
+			}else{
+			    System.out.println("\u001B[31m"+"Rehberinizde Kayıtlı Kişi Yok!"+"\u001B[0m");
 			}
-			else if(tercih == 2) {
-                if(rehber.telRehber[0] != null){
-                    System.out.print("\u001B[32m"+"Kişinin Adı: "+ "\u001B[0m");
-                    keyboard.nextLine();
-                    String ad = keyboard.nextLine();
-                    
-                    System.out.print("\u001B[32m"+"Kişinin Soyadı: "+ "\u001B[0m");
-                    String soyAd = keyboard.nextLine();
-                    
-                    rehber.kayitBul(ad, soyAd);
-                }else{
-                    System.out.println("\u001B[31m"+"Rehberinizde Kayıtlı Kişi Yok!"+"\u001B[0m");
-                }
-				
+			
+		}
+		else if(tercih == 3) {
+			if(rehber.telRehber[0] != null){
+			    System.out.print("\u001B[32m"+"Kişinin Telefon Numarası: "+ "\u001B[0m");
+			    keyboard.nextLine();
+			    String telNo = keyboard.nextLine();
+			    rehber.kayitSil(telNo);
+			}else{
+			    System.out.println("\u001B[31m"+"Rehberinizde Kayıtlı Kişi Yok!"+"\u001B[0m");
 			}
-			else if(tercih == 3) {
-                if(rehber.telRehber[0] != null){
-                    System.out.print("\u001B[32m"+"Kişinin Telefon Numarası: "+ "\u001B[0m");
-                    keyboard.nextLine();
-                    String telNo = keyboard.nextLine();
-                    rehber.kayitSil(telNo);
-                }else{
-                    System.out.println("\u001B[31m"+"Rehberinizde Kayıtlı Kişi Yok!"+"\u001B[0m");
-                }
-			}			
-			else if(tercih == 4) {
-                rehber.kayitlariGoruntule();
+		}			
+		else if(tercih == 4) {
+		rehber.kayitlariGoruntule();
 			}	
 			else if(tercih == 5) {
 				break;
@@ -66,9 +66,9 @@ public class RehberDemo {
 				System.out.println("\u001B[31m"+"Yanlış Seçeneği Tuşladınız!!!"+"\u001B[0m");
 			}
 			
-		}		
-		keyboard.close();
-	}
+	}		
+	keyboard.close();
+}
 	
 	public static void menuGoruntule() {
 		System.out.println("\u001B[32m"+"\nTelefon Rehberi Seçenekleri:"+"\u001B[0m");
